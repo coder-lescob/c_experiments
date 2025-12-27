@@ -1,5 +1,5 @@
 SRC     := src
-BUILD   := build
+BUILD   := .gitignore/build
 OBJ_DIR := $(BUILD)/obj
 BIN_DIR := $(BUILD)/bin
 

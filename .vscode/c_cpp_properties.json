@@ -1,10 +1,20 @@
 {
     "configurations": [
         {
+            "name": ".gitignore/.vscode/c_cpp_properties.json",
+            "includePath": [
+                "${default}"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        },
+        {
             "name": "Linux",
             "includePath": [
-                "${default}",
-                "${workspaceFolder}/src"
+                "${default}"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
