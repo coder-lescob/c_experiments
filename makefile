@@ -4,7 +4,7 @@ OBJ_DIR := $(BUILD)/obj
 BIN_DIR := $(BUILD)/bin
 
 CC := gcc
-OBJFLAGS := -c -g -Wall -Wextra -O3
+OBJFLAGS := -c -g -Wall -Wextra -O3 -I$(SRC)
 CFLAGS   := -Wall -Wextra -O3
 
 SRC_C := $(wildcard $(SRC)/*.c)
