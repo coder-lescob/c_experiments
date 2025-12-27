@@ -6,7 +6,8 @@
 *
 * Precondition: s and t are null-terminated strings.
 *
-* Implementation from the book "The C Programming Language" by Brian W. Kernighan and Dennis M. Ritchie.
+* Implementation from the book "The C Programming Language" 
+* second edition by Brian W. Kernighan and Dennis M. Ritchie page 69.
 *
 * @return The leftmost index of the occurrence of t in s,
 *         or -1 if t does not occur in s.
