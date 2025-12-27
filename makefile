@@ -3,6 +3,8 @@ BUILD   := .gitignore/build
 OBJ_DIR := $(BUILD)/obj
 BIN_DIR := $(BUILD)/bin
 
+MAKEFLAGS += --no-print-directory
+
 CC := gcc
 OBJFLAGS := -c -g -Wall -Wextra -O0 -I$(SRC)
 CFLAGS   := -Wall -Wextra -O0 -g
@@ -18,7 +20,6 @@ all: clean build run
 
 .PHONY: clean
 clean:
-	@clear
 	@echo "CLEANING DONE"
 	@rm -rf $(BUILD)/*
 
@@ -44,4 +45,5 @@ $(OBJ_DIR)/%.o: $(SRC)/%.s
 run:
 	@clear
 	@echo "RUNNING PROGRAM MAIN:"
-	@$(BIN_DIR)/main
+	@./$(BIN_DIR)/main
+	@$(MAKE) clean
