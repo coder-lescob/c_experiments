@@ -66,6 +66,14 @@ void SetItem(LinkedList list, int index, void *data);
 void PrintLinkedList(LinkedList list, void (*printFunc)(void *));
 
 /*
+* Allocate a new string in the heap and copy the given string into it.
+* If the given string is NULL, returns NULL.
+* @param s The string to copy.
+* @return A pointer to the newly allocated string.
+*/
+char *StrAlloc(const char *s);
+
+/*
 * Return the leftmost index of the occurrence of t in s,
 * or -1 if t does not occur in s.
 *

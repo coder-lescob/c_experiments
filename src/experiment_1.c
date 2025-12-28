@@ -98,6 +98,23 @@ void PrintLinkedList(LinkedList list, void (*printFunc)(void *)) {
     PrintLinkedList(list->next, printFunc);
 }
 
+char *StrAlloc(const char *s) {
+    // if no string given, returns NULL
+    if (s == NULL) return NULL;
+
+    // get the length of the string
+    size_t length = strlen(s);
+
+    // allocate space on the heap
+    char *str = (char *)malloc((length + 1) * sizeof(char));
+
+    // copy the string into the allocated space
+    strcpy(str, s);
+
+    // return the pointer to the newly allocated string
+    return str;
+}
+
 int binsearch(char s[], char t[]) {
     int i, j, k;
     for (i = 0; s[i] != '\0'; i++) {

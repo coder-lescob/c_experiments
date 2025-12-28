@@ -22,17 +22,10 @@ int main(void) {
     // create a linked list
     LinkedList list = CreateLinkedList();
 
-    char *str1 = (char *)malloc(20 * sizeof(char));
-    strcpy(str1, "Node 1");
-    char *str2 = (char *)malloc(20 * sizeof(char));
-    strcpy(str2, "Node 2");
-    char *str3 = (char *)malloc(20 * sizeof(char));
-    strcpy(str3, "Node 3");
-
     // add some nodes
-    AddNode(list, str1);
-    AddNode(list, str2);
-    AddNode(list, str3);
+    AddNode(list, StrAlloc("Node 1"));
+    AddNode(list, StrAlloc("Node 2"));
+    AddNode(list, StrAlloc("Node 3"));
 
     char *buffer = NULL;
     GetItem(list, 1, (void **)&buffer);
@@ -40,9 +33,7 @@ int main(void) {
     if (buffer != NULL) printf("%s\n", buffer); // should print "Node 2"
     else printf("buffer is NULL\n");
 
-    char *str4 = (char *)malloc(20 * sizeof(char));
-    strcpy(str4, "Node 2 Updated");
-    SetItem(list, 1, str4);
+    SetItem(list, 1, StrAlloc("Updated Node 2"));
 
     // print the linked list
     void printStr(char *s);
