@@ -5,14 +5,29 @@
 #include <stdbool.h>
 #include <ctype.h>
 
+/*
+* The node of a linked list.
+*/
 typedef struct LinkedNode {
     void *data;
     struct LinkedNode *next;
 } LinkedNode;
 
+/* Used for the linked list */
 typedef LinkedNode LinkedList;
 
+/*
+* Create an empty linked list.
+*
+* @return An empty linked list.
+*/
 LinkedList CreateLinkedList(void);
+
+/*
+* Free the memory allocated for the linked list.
+*
+* @param list The linked list to free.
+*/
 void FreeLinkedList(LinkedList *list);
 void AddNode(LinkedList *list, void *data);
 
