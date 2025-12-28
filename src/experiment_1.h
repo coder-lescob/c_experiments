@@ -1,4 +1,22 @@
 #pragma once
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include <ctype.h>
+
+typedef struct LinkedNode {
+    void *data;
+    struct LinkedNode *next;
+} LinkedNode;
+
+typedef LinkedNode LinkedList;
+
+LinkedList CreateLinkedList(void);
+void FreeLinkedList(LinkedList *list);
+void AddNode(LinkedList *list, void *data);
+
+void PrintLinkedList(LinkedList *list, void (*printFunc)(void *));
 
 /*
 * Return the leftmost index of the occurrence of t in s,
