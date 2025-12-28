@@ -34,6 +34,12 @@ int main(void) {
     AddNode(list, str2);
     AddNode(list, str3);
 
+    char *buffer = NULL;
+    GetItem(list, 1, (void **)&buffer);
+
+    if (buffer != NULL) printf("%s\n", buffer); // should print "Node 2"
+    else printf("buffer is NULL\n");
+
     // print the linked list
     void printStr(char *s);
     PrintLinkedList(list, (void (*)(void *))printStr);

@@ -47,7 +47,7 @@ void AddNode(LinkedList list, void *data);
 * @param index The index of the data to get.
 * @param outData The pointer to store the data.
 */
-void GetItem(LinkedList list, int index, void *outData);
+void GetItem(LinkedList list, int index, void **outData);
 
 /*
 * Set the data at the given index in the linked list.

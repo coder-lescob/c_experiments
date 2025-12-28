@@ -55,7 +55,7 @@ void AddNode(LinkedList list, void *data) {
     }
 }
 
-void GetItem(LinkedList list, int index, void *outData) {
+void GetItem(LinkedList list, int index, void **outData) {
     if (list == NULL) return;
 
     for (int i = 0; i < index; i++) {
@@ -68,7 +68,7 @@ void GetItem(LinkedList list, int index, void *outData) {
     }
 
     // assign the data to outData
-    outData = list->data;
+    *outData = list->data;
 }
 
 void SetItem(LinkedList list, int index, void *data) {
