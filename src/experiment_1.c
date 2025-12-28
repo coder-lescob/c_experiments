@@ -1,35 +1,38 @@
 #include "experiment_1.h"
 
 LinkedList CreateLinkedList(void) {
-    LinkedList head = {NULL, NULL};
+    LinkedList head = (LinkedList)malloc(sizeof(LinkedNode));
+    head->data = NULL;
+    head->next = NULL;
     return head;
 }
 
-void FreeLinkedList(LinkedList *list) {
+void FreeLinkedList(LinkedList list) {
+    if (list == NULL) return;
 
     // free the data space
-    free(list->data);
+    if (list->data != NULL) {
+        // free the data
+        free(list->data);
 
-    // set data to NULL to avoid dangling pointer
-    list->data = NULL;
-
-    // if there is no next node, free this node and return
-    if (list->next == NULL) {
-        free(list);
-        return;
+        // set data to NULL to avoid dangling pointer
+        list->data = NULL;
     }
 
-    // recusivly free the next nodes
+    // recursively free the next nodes
     FreeLinkedList(list->next);
 
     // finally free this node
-    free(list);
+    if (list != NULL) {
+        // free the node
+        free(list);
 
-    // set next to NULL to avoid dangling pointer
-    list->next = NULL;
+        // set list to NULL to avoid dangling pointer
+        list = NULL;
+    }
 }
 
-void AddNode(LinkedList *list, void *data) {
+void AddNode(LinkedList list, void *data) {
     if (list->data == NULL) {
         // Node free, assign data here
         list->data = data;
@@ -52,7 +55,39 @@ void AddNode(LinkedList *list, void *data) {
     }
 }
 
-void PrintLinkedList(LinkedList *list, void (*printFunc)(void *)) {
+void GetItem(LinkedList list, int index, void *outData) {
+    if (list == NULL) return;
+
+    for (int i = 0; i < index; i++) {
+        if (list->next == NULL) {
+            // index out of bounds
+            printf("index %d out of bounds\n", index);
+            return;
+        }
+        list = list->next;
+    }
+
+    // assign the data to outData
+    outData = list->data;
+}
+
+void SetItem(LinkedList list, int index, void *data) {
+    if (list == NULL) return;
+
+    for (int i = 0; i < index; i++) {
+        if (list->next == NULL) {
+            // index out of bounds
+            printf("index %d out of bounds\n", index);
+            return;
+        }
+        list = list->next;
+    }
+
+    // set the data at this node
+    list->data = data;
+}
+
+void PrintLinkedList(LinkedList list, void (*printFunc)(void *)) {
     // No more nodes to print
     if (list == NULL) return;
 
