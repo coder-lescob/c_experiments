@@ -92,7 +92,7 @@ void PrintLinkedList(LinkedList list, void (*printFunc)(void *)) {
     if (list == NULL) return;
 
     // call the print function for this node
-    (*printFunc)(list->data);
+    printFunc(list->data); // (*printFunc)(list->data);
 
     // recursive call to print the next node
     PrintLinkedList(list->next, printFunc);
