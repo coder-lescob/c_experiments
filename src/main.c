@@ -40,6 +40,10 @@ int main(void) {
     if (buffer != NULL) printf("%s\n", buffer); // should print "Node 2"
     else printf("buffer is NULL\n");
 
+    char *str4 = (char *)malloc(20 * sizeof(char));
+    strcpy(str4, "Node 2 Updated");
+    SetItem(list, 1, str4);
+
     // print the linked list
     void printStr(char *s);
     PrintLinkedList(list, (void (*)(void *))printStr);
