@@ -41,7 +41,7 @@ void BinarySearchExample(void) {
 
     // take care of fgets failure
     if (success == NULL) {
-        perror("Error reading input string.\n");
+        printf("Error reading input string.\n");
         return;
     }
 
