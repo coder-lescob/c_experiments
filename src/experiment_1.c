@@ -115,6 +115,17 @@ char *StrAlloc(const char *s) {
     return str;
 }
 
+int *IntAlloc(int value) {
+    // allocate space on the heap
+    int *p = (int *)malloc(sizeof(int));
+
+    // set the value
+    *p = value;
+
+    // return the pointer to the newly allocated integer
+    return p;
+}
+
 int binsearch(char s[], char t[]) {
     int i, j, k;
     for (i = 0; s[i] != '\0'; i++) {

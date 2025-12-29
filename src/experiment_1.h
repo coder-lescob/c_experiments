@@ -7,6 +7,8 @@
 
 /*
 * The node of a linked list.
+* @param data The data stored in the node.
+* @param next The pointer to the next node.
 */
 typedef struct LinkedNode {
     void *data;
@@ -72,6 +74,13 @@ void PrintLinkedList(LinkedList list, void (*printFunc)(void *));
 * @return A pointer to the newly allocated string.
 */
 char *StrAlloc(const char *s);
+
+/*
+* Allocate a new integer in the heap and set its value.
+* @param value The value to set.
+* @return A pointer to the newly allocated integer.
+*/
+int *IntAlloc(int value);
 
 /*
 * Return the leftmost index of the occurrence of t in s,
