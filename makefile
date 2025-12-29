@@ -15,6 +15,8 @@ OBJ_C := $(patsubst $(SRC)/%.c,$(OBJ_DIR)/%.o,$(SRC_C))
 OBJ_S := $(patsubst $(SRC)/%.s,$(OBJ_DIR)/%.o,$(SRC_S))
 ALLOBJ:= $(OBJ_C) $(OBJ_S)
 
+PROGRAM_INPUT := --linkedlist --binarysearch
+
 .PHONY: all
 all: clean build run
 
@@ -45,5 +47,5 @@ $(OBJ_DIR)/%.o: $(SRC)/%.s
 run:
 	@clear
 	@echo "RUNNING PROGRAM MAIN:"
-	@./$(BIN_DIR)/main
+	@./$(BIN_DIR)/main $(PROGRAM_INPUT)
 	@$(MAKE) clean
