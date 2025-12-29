@@ -6,15 +6,26 @@
 // stdlib
 #include <stdio.h>
 
+/* An unsigned long integer */
 typedef unsigned long int ulong;
 
+/*
+* An structure representing an experiment as an association between
+* its name and the function to execute it.
+* @param name The name of the experiment (e.g., "--linkedlist").
+* @param func The function pointer to the experiment function.
+*/
 typedef struct Experiment {
     char *name;
     void (*func)(void);
 } Experiment;
 
+/*
+* Print the names of all available experiments to stdout.
+*/
 void PrintAvailableExperiments(void);
 
+/* The array of all experiments */
 Experiment experiments[] = {
     {"--help", PrintAvailableExperiments},
     {"--linkedlist", LinkedListExample},
