@@ -34,7 +34,7 @@ void FreeLinkedList(LinkedList list);
 * @param list The linked list to add the node to.
 * @param data The data to add to the new node.
 */
-void AddNode(LinkedList list, void *data);
+void AddLinkedNode(LinkedList list, void *data);
 
 /*
 * Get the data pointer at the given index in the linked list.
@@ -47,7 +47,7 @@ void AddNode(LinkedList list, void *data);
 * @param index The index of the data to get.
 * @param outData The pointer to store the data.
 */
-void GetItem(LinkedList list, int index, void **outData);
+void GetLinkedItem(LinkedList list, int index, void **outData);
 
 /*
 * Set the data at the given index in the linked list.
@@ -56,7 +56,7 @@ void GetItem(LinkedList list, int index, void **outData);
 * @param index The index of the data to set.
 * @param data The data to set.
 */
-void SetItem(LinkedList list, int index, void *data);
+void SetLinkedItem(LinkedList list, int index, void *data);
 
 /*
 * Print the linked list using the given print function.

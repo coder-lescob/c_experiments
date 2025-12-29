@@ -23,17 +23,17 @@ int main(void) {
     LinkedList list = CreateLinkedList();
 
     // add some nodes
-    AddNode(list, StrAlloc("Node 1"));
-    AddNode(list, StrAlloc("Node 2"));
-    AddNode(list, StrAlloc("Node 3"));
+    AddLinkedNode(list, StrAlloc("Node 1"));
+    AddLinkedNode(list, StrAlloc("Node 2"));
+    AddLinkedNode(list, StrAlloc("Node 3"));
 
     char *buffer = NULL;
-    GetItem(list, 1, (void **)&buffer);
+    GetLinkedItem(list, 1, (void **)&buffer);
 
     if (buffer != NULL) printf("%s\n", buffer); // should print "Node 2"
     else printf("buffer is NULL\n");
 
-    SetItem(list, 1, StrAlloc("Updated Node 2"));
+    SetLinkedItem(list, 1, StrAlloc("Updated Node 2"));
 
     // print the linked list
     void printStr(char *s);

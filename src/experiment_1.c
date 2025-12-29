@@ -32,7 +32,7 @@ void FreeLinkedList(LinkedList list) {
     }
 }
 
-void AddNode(LinkedList list, void *data) {
+void AddLinkedNode(LinkedList list, void *data) {
     if (list->data == NULL) {
         // Node free, assign data here
         list->data = data;
@@ -51,11 +51,11 @@ void AddNode(LinkedList list, void *data) {
             return;
         }
         // recursive call to find the tail
-        AddNode(list->next, data);
+        AddLinkedNode(list->next, data);
     }
 }
 
-void GetItem(LinkedList list, int index, void **outData) {
+void GetLinkedItem(LinkedList list, int index, void **outData) {
     if (list == NULL) return;
 
     for (int i = 0; i < index; i++) {
@@ -71,7 +71,7 @@ void GetItem(LinkedList list, int index, void **outData) {
     *outData = list->data;
 }
 
-void SetItem(LinkedList list, int index, void *data) {
+void SetLinkedItem(LinkedList list, int index, void *data) {
     if (list == NULL) return;
 
     for (int i = 0; i < index; i++) {
