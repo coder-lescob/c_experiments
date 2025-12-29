@@ -5,9 +5,9 @@ In this repo you can find functions from <u>The C programming language<u> by Bri
 of this amazing book.
 
 # Experiments done yet
-* --linkedlist : a list of linked element usful in some usage, but to slow for others.
+* --linkedlist : a dynamique list of linked element usful in some usage, but to slow for others.
 * --binarysearch : find a substring in an input.
 
 # Futur experiments
-* --arraylist : or vector, a more cache friendly version of the linkedlist, better for most usages.
+* --arraylist : or vector, a more cache friendly version of a dynamique list better than the linkedlist for most usages.
 * --tree : a collection of nodes that are linked together like a linkedlist but with multiple next nodes.
