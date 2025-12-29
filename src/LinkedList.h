@@ -1,9 +1,8 @@
 #pragma once
-#include <stdio.h>
+
+// Includes
 #include <stdlib.h>
-#include <string.h>
-#include <stdbool.h>
-#include <ctype.h>
+#include <stdio.h>
 
 /*
 * The node of a linked list.
@@ -15,7 +14,9 @@ typedef struct LinkedNode {
     struct LinkedNode *next;
 } LinkedNode;
 
-/* Used for the linked list */
+/* 
+* The linked list type (aka pointer to the head of the list) 
+*/
 typedef LinkedNode *LinkedList;
 
 /*
@@ -66,33 +67,3 @@ void SetLinkedItem(LinkedList list, int index, void *data);
 * @param printFunc The function to use to print the data in each node.
 */
 void PrintLinkedList(LinkedList list, void (*printFunc)(void *));
-
-/*
-* Allocate a new string in the heap and copy the given string into it.
-* If the given string is NULL, returns NULL.
-* @param s The string to copy.
-* @return A pointer to the newly allocated string.
-*/
-char *StrAlloc(const char *s);
-
-/*
-* Allocate a new integer in the heap and set its value.
-* @param value The value to set.
-* @return A pointer to the newly allocated integer.
-*/
-int *IntAlloc(int value);
-
-/*
-* Return the leftmost index of the occurrence of t in s,
-* or -1 if t does not occur in s.
-*
-* Precondition: s and t are null-terminated strings.
-*
-* Equivalent to the strstr function in string.h.
-* Implementation from the book "The C Programming Language" 
-* second edition by Brian W. Kernighan and Dennis M. Ritchie page 69.
-*
-* @return The leftmost index of the occurrence of t in s,
-*         or -1 if t does not occur in s.
-*/
-int binsearch(char s[], char t[]);
