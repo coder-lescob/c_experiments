@@ -5,5 +5,5 @@ In this repo you can find functions from <u>The C programming language<u> by Bri
 of this amazing book.
 
 # Experiments yet
-* --linkedlist   | a list of linked element usful in some usage, but to slow for others.
-* --binarysearch | find a substring in an input.
+* --linkedlist   : a list of linked element usful in some usage, but to slow for others.
+* --binarysearch : find a substring in an input.
