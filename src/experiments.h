@@ -15,6 +15,8 @@ void LinkedListExample(void);
 */
 void BinarySearchExample(void);
 
+void ArrayListExample(void);
+
 /*
 * Print a string to stdout.
 * @param s The string to print.

@@ -1,6 +1,7 @@
 #include "experiments.h"
 #include "LinkedList.h"
 #include "Alloc.h"
+#include "arrayList.h"
 
 void LinkedListExample(void) {
     // example usage of linked list
@@ -62,6 +63,15 @@ void BinarySearchExample(void) {
         printf("Substring found at index: %d\n", index);
     else
         printf("Substring not found.\n");
+}
+
+void ArrayListExample(void) {
+    Arraylist list = CreateArraylist(10, 100, INT);
+
+    SetItem(&list, 0, 0x25);
+    printf("0x%x\n", ((int *)list.data)[0]);
+
+    FreeArraylist(&list);
 }
 
 void printStr(char *s) {
