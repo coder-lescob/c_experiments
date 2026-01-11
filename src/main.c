@@ -30,8 +30,8 @@ Experiment experiments[] = {
     {"--help", PrintAvailableExperiments},
     {"--linkedlist", LinkedListExample},
     {"--binarysearch", BinarySearchExample},
-    {"--arraylist_int", ArrayListExample1},
-    {"--arraylist_str", ArrayListExample2}
+    {"--arraylist-int", ArrayListExample1},
+    {"--arraylist-str", ArrayListExample2}
 };
 
 Experiment FindExperiment(char *name) {
