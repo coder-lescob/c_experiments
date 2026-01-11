@@ -66,16 +66,17 @@ void BinarySearchExample(void) {
 }
 
 void ArrayListExample(void) {
-    Arraylist list = CreateArraylist(0, 10, CHAR);
+    Arraylist list = CreateArraylist(0, 10, INT);
 
     for (int i = 0; i < 100; i++)
-        Push(&list, 'a');
+        Push(&list, i);
 
     for (int i = 0; i < 100; i++) {
-        char item;
+        int item;
         GetItem(&list, 0, &item);
+        Remove(&list, 0);
 
-        printf("%c\n", item);
+        printf("%d\n", item);
     }
 
     FreeArraylist(&list);

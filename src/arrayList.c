@@ -99,7 +99,7 @@ void Push(Arraylist *list, ...) {
         void *olddata = list->data;
         list->capacity *= 2;
         list->data = malloc(list->capacity * list->itemsize);
-        memcpy(list->data, olddata, list->size);
+        memcpy(list->data, olddata, list->size * list->itemsize);
         free(olddata);
     }
 
@@ -143,7 +143,7 @@ void Remove(Arraylist *list, long index) {
     }
 
     // compute the pointer to list's indexth item
-    void *ptr = list->data + index;
+    void *ptr = list->data + index * list->itemsize;
 
     // compute how many slots are to the 'right' of the indexth slot
     long size = list->size - (index + 1);
@@ -151,7 +151,7 @@ void Remove(Arraylist *list, long index) {
     // copy all bytes to the right of ptr one slot before
     // having the effect to shift the list one slot to 
     // the 'left' while deleting list's indexth item
-    memcpy(ptr, ptr + 1, size);
+    memcpy(ptr, ptr + list->itemsize, size * list->itemsize);
 
     // decreament the size of the array 
     // to signify that the last item is just garbage
