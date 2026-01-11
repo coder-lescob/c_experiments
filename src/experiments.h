@@ -15,6 +15,10 @@ void LinkedListExample(void);
 */
 void BinarySearchExample(void);
 
+/*
+* Example of usage of arraylist, pushes 100 items in an int arraylist, 
+* from 0 to 99, then retreave them in reverse order and Removes them.
+*/
 void ArrayListExample(void);
 
 /*
