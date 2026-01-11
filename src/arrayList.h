@@ -17,7 +17,8 @@ enum ItemType {
     INT,
     UINT,
     LONG,
-    ULONG
+    ULONG,
+    STR
 };
 
 /*
@@ -48,7 +49,8 @@ typedef struct Arraylist {
             __builtin_choose_expr( (c) == USHORT, (unsigned short){0}, \
             __builtin_choose_expr( (c) == UINT, (unsigned int){0}, \
             __builtin_choose_expr( (c) == ULONG, (unsigned long){0}, \
-                                    (void *)0 ) ) ) ) ) ) ) ) )
+            __builtin_choose_expr( (c) == STR, (char *){0}, \
+                                    (void *)0 ) ) ) ) ) ) ) ) ) )
 
 /*
 * Creates a new arraylist.

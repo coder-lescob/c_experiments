@@ -1,7 +1,7 @@
 #include "arrayList.h"
 
-#define __Unsafe_SetItem(list, idx, type, item) ((type *)list->data)[idx] = item
-#define __Unsafe_GetItem(list, idx, type, ptr)  *ptr = ((type *)list->data)[idx]
+#define __Unsafe_SetItem(list, idx, type, item) ((type*)list->data)[idx] = item
+#define __Unsafe_GetItem(list, idx, type, ptr)  *(ptr) = ((type*)list->data)[idx]
 
 void SetItem(Arraylist *list, long index, ...) {
     if (index >= list->size || index < 0) {
@@ -38,6 +38,9 @@ void SetItem(Arraylist *list, long index, ...) {
             break;
         case ULONG:
             __Unsafe_SetItem(list, index, uint64_t, NextArg(uint64_t));
+            break;
+        case STR:
+            __Unsafe_SetItem(list, index, char *, NextArg(char *));
             break;
         default:
             break;
@@ -81,6 +84,9 @@ void GetItem(Arraylist *list, long index, ...) {
             break;
         case ULONG:
             __Unsafe_GetItem(list, index, uint64_t, NextArg(uint64_t *));
+            break;
+        case STR:
+            __Unsafe_GetItem(list, index, char *, NextArg(char **));
             break;
         default:
             break;
@@ -127,6 +133,9 @@ void Push(Arraylist *list, ...) {
             break;
         case ULONG:
             __Unsafe_SetItem(list, list->size++, uint64_t, NextArg(uint64_t));
+            break;
+        case STR:
+            __Unsafe_SetItem(list, list->size++, char *, NextArg(char *));
             break;
         default:
             break;

@@ -19,7 +19,13 @@ void BinarySearchExample(void);
 * Example of usage of arraylist, pushes 100 items in an int arraylist, 
 * from 0 to 99, then retreave them in reverse order and Removes them.
 */
-void ArrayListExample(void);
+void ArrayListExample1(void);
+
+/*
+* Example of usage of arraylist, pushes 100 items in an string arraylist, 
+* from 0 to 99, then retreave them in reverse order and Removes them.
+*/
+void ArrayListExample2(void);
 
 /*
 * Print a string to stdout.

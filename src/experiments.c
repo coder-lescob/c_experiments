@@ -65,7 +65,7 @@ void BinarySearchExample(void) {
         printf("Substring not found.\n");
 }
 
-void ArrayListExample(void) {
+void ArrayListExample1(void) {
     Arraylist list = CreateArraylist(0, 10, INT);
 
     for (int i = 0; i < 100; i++)
@@ -80,6 +80,41 @@ void ArrayListExample(void) {
     }
 
     FreeArraylist(&list);
+}
+
+void ArrayListExample2(void) {
+    FILE *fptr = fopen("debug/aaa_to_zzz.txt", "w");
+    if (!fptr) {
+        perror("cannot open file.");
+        exit(-1);
+    }
+
+    Arraylist list = CreateArraylist(0, 10, STR);
+
+    #define MAX 0x44a8
+
+    char str[MAX * 4] = "aaa";
+
+    for (int i = 0; i < MAX; i++){
+        if (i > 0) memcpy(str + i * 4, str + (i - 1) * 4, 4);
+        Push(&list, str + i * 4);
+        if (i > 0){
+            if (str[i * 4 + 2] < 'z') str[i * 4 + 2]++;
+            else if (str[i * 4 + 1] < 'z') {str[i * 4 + 1]++; str[i * 4 + 2] = 'a';}
+            else if (str[i * 4] < 'z') {str[i * 4]++; str[i * 4 + 1] = 'a'; str[i * 4 + 2] = 'a';} 
+        }
+    }
+
+    for (int i = 0; i < MAX; i++) {
+        char *item;
+        GetItem(&list, 0, &item);
+        Remove(&list, 0);
+
+        fprintf(fptr, "%3s\n", item);
+    }
+
+    FreeArraylist(&list);
+    close(fptr);
 }
 
 void printStr(char *s) {
