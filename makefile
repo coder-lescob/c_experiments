@@ -3,6 +3,8 @@ BUILD   := build
 OBJ_DIR := $(BUILD)/obj
 BIN_DIR := $(BUILD)/bin
 
+TARGET := $(BIN_DIR)/experiments
+
 MAKEFLAGS += --no-print-directory
 
 CC := gcc
@@ -29,7 +31,7 @@ clean:
 build: $(ALLOBJ)
 	@echo "LINKING DONE"
 	@mkdir -p $(BIN_DIR)
-	@$(CC) $(CFLAGS) $(ALLOBJ) -o $(BIN_DIR)/main
+	@$(CC) $(CFLAGS) $(ALLOBJ) -o $(TARGET)
 
 # compile C sources to object files
 $(OBJ_DIR)/%.o: $(SRC)/%.c
@@ -46,11 +48,11 @@ $(OBJ_DIR)/%.o: $(SRC)/%.s
 .PHONY: run
 run:
 	@clear
-	@echo "RUNNING PROGRAM MAIN:"
-	@./$(BIN_DIR)/main $(PROGRAM_INPUT)
+	@echo "RUNNING PROGRAM:"
+	@$(TARGET) $(PROGRAM_INPUT)
 
 .PHONY: debug
 debug: clean build
 	@clear
-	@echo "RUNNING PROGRAM MAIN IN DEBUG MODE:"
-	@gdb ./$(BIN_DIR)/main
+	@echo "RUNNING PROGRAM IN DEBUG MODE:"
+	@gdb $(TARGET)
