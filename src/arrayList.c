@@ -143,7 +143,7 @@ void Remove(Arraylist *list, long index) {
     }
 
     // compute the pointer to list's indexth item
-    void *ptr = list->data + index * list->itemsize;
+    char *ptr = (char *)list->data + index * list->itemsize;
 
     // compute how many slots are to the 'right' of the indexth slot
     long size = list->size - (index + 1);
