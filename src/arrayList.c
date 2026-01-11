@@ -135,6 +135,29 @@ void Push(Arraylist *list, ...) {
     va_end(args);
 }
 
+void Remove(Arraylist *list, long index) {
+    // verify the range of index
+    if (index >= list->size || index < 0) {
+        perror("List index out of range.");
+        exit(-1);
+    }
+
+    // compute the pointer to list's indexth item
+    void *ptr = list->data + index;
+
+    // compute how many slots are to the 'right' of the indexth slot
+    long size = list->size - (index + 1);
+
+    // copy all bytes to the right of ptr one slot before
+    // having the effect to shift the list one slot to 
+    // the 'left' while deleting list's indexth item
+    memcpy(ptr, ptr + 1, size);
+
+    // decreament the size of the array 
+    // to signify that the last item is just garbage
+    list->size--;
+}
+
 void FreeArraylist(Arraylist *list) {
     // free the data list
     free(list->data);

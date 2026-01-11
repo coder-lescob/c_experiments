@@ -84,6 +84,13 @@ void GetItem(Arraylist *list, long index, ...);
 void Push(Arraylist *list, ...);
 
 /*
+* delete list's indexth item.
+* @param list  The pointer to the arraylist.
+* @param index The index of the item wanted.
+*/
+void Remove(Arraylist *list, long index);
+
+/*
 * Free the data section of arraylist. Also set evry item that have to do with the size to 0.
 * @param list  The pointer to the arraylist.
 */
