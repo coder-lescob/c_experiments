@@ -6,8 +6,8 @@ BIN_DIR := $(BUILD)/bin
 MAKEFLAGS += --no-print-directory
 
 CC := gcc
-OBJFLAGS := -c -g -Wall -Wextra -Wpedantic -O0 -I$(SRC)
-CFLAGS   := -Wall -Wextra -Wpedantic -O0 -g
+OBJFLAGS := -c -g -Wall -Wextra -Wpedantic -O3 -I$(SRC)
+CFLAGS   := -Wall -Wextra -Wpedantic -O3 -g
 
 SRC_C := $(wildcard $(SRC)/*.c)
 SRC_S := $(wildcard $(SRC)/*.s)
