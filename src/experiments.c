@@ -73,10 +73,10 @@ void ArrayListExample(void) {
 
     for (int i = 0; i < 100; i++) {
         int item;
-        GetItem(&list, 0, &item);
-        Remove(&list, 0);
+        GetItem(&list, list.size-1, &item);
+        Remove(&list, list.size-1);
 
-        printf("%d\n", item);
+        printf("%x\n", item);
     }
 
     FreeArraylist(&list);
