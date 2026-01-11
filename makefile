@@ -48,11 +48,9 @@ run:
 	@clear
 	@echo "RUNNING PROGRAM MAIN:"
 	@./$(BIN_DIR)/main $(PROGRAM_INPUT)
-	@$(MAKE) clean
 
 .PHONY: debug
 debug: clean build
 	@clear
 	@echo "RUNNING PROGRAM MAIN IN DEBUG MODE:"
 	@gdb ./$(BIN_DIR)/main
-	@$(MAKE) clean
