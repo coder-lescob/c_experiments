@@ -17,6 +17,7 @@ typedef struct Token {
 
 /*
 * Tokenize a string as a list of tokens.
+* NOTE: don't forget to free the token array.
 * @param str The string to tokenize.
 * @returns The list of token.
 */
