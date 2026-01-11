@@ -6,6 +6,8 @@
 #include <string.h>
 #include <stdarg.h>
 
+#include "Lexer.h"
+
 /*
 * The type of an item of the arraylist.
 */
@@ -18,7 +20,8 @@ enum ItemType {
     UINT,
     LONG,
     ULONG,
-    STR
+    STR,
+    TOKEN
 };
 
 /*
@@ -50,7 +53,8 @@ typedef struct Arraylist {
             __builtin_choose_expr( (c) == UINT, (unsigned int){0}, \
             __builtin_choose_expr( (c) == ULONG, (unsigned long){0}, \
             __builtin_choose_expr( (c) == STR, (char *){0}, \
-                                    (void *)0 ) ) ) ) ) ) ) ) ) )
+            __builtin_choose_expr( (c) == TOKEN, (Token){0}, \
+                                    (void *)0 ) ) ) ) ) ) ) ) ) ) )
 
 /*
 * Creates a new arraylist.

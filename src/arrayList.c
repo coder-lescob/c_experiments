@@ -42,6 +42,9 @@ void SetItem(Arraylist *list, long index, ...) {
         case STR:
             __Unsafe_SetItem(list, index, char *, NextArg(char *));
             break;
+        case TOKEN:
+            __Unsafe_SetItem(list, index, Token, NextArg(Token));
+            break;
         default:
             break;
     }
@@ -87,6 +90,9 @@ void GetItem(Arraylist *list, long index, ...) {
             break;
         case STR:
             __Unsafe_GetItem(list, index, char *, NextArg(char **));
+            break;
+        case TOKEN:
+            __Unsafe_GetItem(list, index, Token, NextArg(Token *));
             break;
         default:
             break;
@@ -136,6 +142,9 @@ void Push(Arraylist *list, ...) {
             break;
         case STR:
             __Unsafe_SetItem(list, list->size++, char *, NextArg(char *));
+            break;
+        case TOKEN:
+            __Unsafe_SetItem(list, list->size++, Token, NextArg(Token));
             break;
         default:
             break;
